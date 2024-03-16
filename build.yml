@@ -1,0 +1,32 @@
+name: Build and Release
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Build TypeScript
+      run: npm run build
+
+    - name: Package release
+      run: npm pack
+
+    - name: Move package
+      run: mv *.tgz streamdeck-plugin.tar.gz
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: yugioh-streamdeck-plugin
+        path: streamdeck-plugin.tar.gz
