@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yu-Gi-Oh! Plugin</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+        }
+
+        .player {
+            margin-right: 20px;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Contrôle des Points de Vie</h1>
+    <div class="container">
+        <div class="player">
+            <h2>Joueur 1</h2>
+            <input type="range" id="player1Life" min="0" max="8000" value="8000">
+            <div id="player1Display">Points de Vie: 8000</div>
+        </div>
+        <div class="player">
+            <h2>Joueur 2</h2>
+            <input type="range" id="player2Life" min="0" max="8000" value="8000">
+            <div id="player2Display">Points de Vie: 8000</div>
+        </div>
+    </div>
+    <div class="controls">
+        <button class="button" id="validateButton">Valider</button>
+        <button class="button" id="resetButton">Réinitialiser</button>
+    </div>
+
+    <script>
+        // Récupération des éléments HTML
+        const player1LifeInput = document.getElementById('player1Life');
+        const player2LifeInput = document.getElementById('player2Life');
+        const player1Display = document.getElementById('player1Display');
+        const player2Display = document.getElementById('player2Display');
+        const validateButton = document.getElementById('validateButton');
+        const resetButton = document.getElementById('resetButton');
+
+        // Mise à jour de l'affichage des points de vie des joueurs
+        player1LifeInput.addEventListener('input', () => {
+            player1Display.textContent = `Points de Vie: ${player1LifeInput.value}`;
+        });
+
+        player2LifeInput.addEventListener('input', () => {
+            player2Display.textContent = `Points de Vie: ${player2LifeInput.value}`;
+        });
+
+        // Gestion de l'événement de validation
+        validateButton.addEventListener('click', () => {
+            // Effectuez les actions de validation nécessaires ici
+            alert('Points de vie validés !');
+        });
+
+        // Gestion de l'événement de réinitialisation
+        resetButton.addEventListener('click', () => {
+            // Réinitialisez les points de vie des joueurs ici
+            player1LifeInput.value = 8000;
+            player2LifeInput.value = 8000;
+            player1Display.textContent = 'Points de Vie: 8000';
+            player2Display.textContent = 'Points de Vie: 8000';
+            alert('Points de vie réinitialisés !');
+        });
+    </script>
+</body>
+</html>

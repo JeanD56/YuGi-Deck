@@ -1,0 +1,25 @@
+{
+  "name": "yugioh-streamdeck-plugin",
+  "version": "1.0.0",
+  "description": "Plugin for controlling a Yu-Gi-Oh! card game on Stream Deck",
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "keywords": [
+    "stream deck",
+    "yu-gi-oh",
+    "plugin"
+  ],
+  "author": "JeanD56",
+  "license": "MIT",
+  "dependencies": {
+    "@elgato-stream-deck/node": "^1.3.0",
+    "@elgato-stream-deck/plugin": "^2.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.15",
+    "typescript": "^4.5.5"
+  }
+}

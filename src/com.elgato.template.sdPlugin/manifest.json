@@ -1,0 +1,28 @@
+{
+	"SDKVersion": 2,
+	"Author": "JeanD56",
+	"CodePath": "app.html",
+	"Description": "Plugin pour contrôler un jeu de cartes Yu-Gi-Oh! sur Stream Deck.",
+	"Name": "Yu-Gi-Oh! Plugin",
+	"Icon": "icon.png",
+	"URL": "",
+	"Version": "1.0",
+	"Software": {
+		"MinimumVersion": "5.0"
+	},
+	"OS": [
+		{
+			"Platform": "mac",
+			"MinimumVersion": "10.11"
+		},
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		}
+	],
+	"Category": "Games",
+	"CategoryIcon": "icon.png",
+	"Actions": [],
+	"UUID": "com.jeand56.yugiohplugin",
+	"PropertyInspectorPath": ""
+}
